@@ -56,7 +56,7 @@ def match_histograms(source, template):
 # util function to preserve image color
 def original_color_transform(content, generated, mask=None, hist_match=0, mode='YCbCr'):
     generated = fromimage(toimage(generated, mode='RGB'), mode=mode)  # Convert to YCbCr color space
-
+    print(mask)
     if mask is None:
         if hist_match == 1:
             for channel in range(3):
