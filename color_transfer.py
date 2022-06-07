@@ -57,8 +57,7 @@ def match_histograms(source, template):
 def original_color_transform(content, generated, mask=None, hist_match=0, mode='YCbCr'):
     generated = fromimage(toimage(generated, mode='RGB'), mode=mode)  # Convert to YCbCr color space
     if mask is None:
-        print("hello" + mask)
-        if hist_match == 1:
+        if hist_match == 0:
             for channel in range(3):
                 generated[:, :, channel] = match_histograms(generated[:, :, channel], content[:, :, channel])
         else:
